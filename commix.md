@@ -7,7 +7,7 @@ Error Explanation
 
 This error occurs because Commix requires a specific parameter to proceed with exploitation. You need to specify what you want to test or exploit by providing the necessary flags.
 Common Options for Commix
-
+```bash
 Here are some common options you should use:
 
     -u: Specify the target URL to test for vulnerabilities.
@@ -18,7 +18,7 @@ Here are some common options you should use:
     --wizard: Start an interactive mode for easier use.
     --list-tampers: List available tampering techniques (for bypassing WAFs).
     --purge: Purge or reset settings to default.
-
+```
 Solution: Provide a URL and a Required Option
 
 To resolve this, you need to specify the target URL along with a valid option. Here’s an example command:
@@ -32,18 +32,18 @@ This will test the given URL for potential command injection vulnerabilities in 
 Using the Wizard (Interactive Mode)
 
 You can also start an interactive mode (wizard) to guide you through the process:
-
+```bash
 commix -u "http://example.com/vulnerable.php?input=1" --wizard
-
+```
 This will start a wizard that helps you select the appropriate attack method and options.
 Specify a Custom Command (if you want to run a specific command)
 
 If you want to manually specify a command to run, use the -x flag:
-
+```bash
 commix -u "http://example.com/vulnerable.php?input=1" -x "ls /etc"
-
+```
 This will try to execute the ls /etc command on the server, listing the files in the /etc directory.
-Conclusion
+### Conclusion
 
 To fix the error, you need to provide the required options like -u (target URL) or use one of the other valid options. Ensure that the target URL you're testing is correct, and remember to always have explicit permission before running any penetration testing tools on a system.
 
